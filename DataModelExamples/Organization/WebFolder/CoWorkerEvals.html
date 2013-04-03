@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html><html>
+    <head>
+        <title>CoWorkerEvals</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="generator" content="Wakanda GUIDesigner"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    	<meta name="wakanda-version" content="0.0.0.0 build 0.110778"/>
+		<meta name="wakanda-build" content="0.110778"/>
+		<meta name="WAF.config.loadCSS" id="waf-palette" content="/walib/WAF/widget/palette/css/widget-palette-default.css"/>
+		<meta name="WAF.config.datasources" data-type="dataSource" data-source-type="scalar" data-source="varEval" data-lib="WAF" data-id="varEval" data-dataType="string" data-autoLoad="true" content="varEval"/>
+		<meta name="WAF.config.datasources" data-type="dataSource" data-source-type="dataClass" data-source="CoWorker" data-lib="WAF" data-initialOrderBy="relation" data-id="coWorker" data-dataType="string" data-autoLoad="true" content="coWorker"/>
+		<meta name="WAF.config.loadCSS" id="waf-interface-css" content="styles/CoWorkerEvals.css"/>
+		<meta name="WAF.config.loadCSS" id="waf-project-css" content="/application.css"/>
+<meta name="WAF.config.loadJS" id="waf-script" content="scripts/CoWorkerEvals.js"/>
+		</head>
+    <body id="waf-body" data-type="document">
+    	<div id="login1" data-user-label="User: " data-user-display="Signed in as " data-type="login" data-password-label="Password: " data-logout-action="Logout" data-login-title="Login Dialog" data-login-button="Login" data-login-action="Login" data-lib="WAF" data-constraint-top="true" data-constraint-right="true" data-constraint-left="true" class="waf-widget waf-login default inherited  "></div>
+	<div id="container1" data-type="container" data-lib="WAF" data-constraint-top="true" data-constraint-right="true" data-constraint-left="true" data-constraint-bottom="true" class="waf-widget waf-container default inherited  ">
+ 		<div id="dataGrid1" data-type="dataGrid" data-selection-mode="single" data-lib="WAF" data-label-position="top" data-label="" data-footer-text="Coworkers" data-display-error="true" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="true" data-column="[{'sourceAttID':'fullName','colID':'fullName','width':'125','title':'Name'},{'sourceAttID':'relation','colID':'relation','width':'80','title':'Relation'},{'sourceAttID':'evaluationComments','colID':'evaluationComments','width':'191','title':'Evaluation'}]" data-binding="coWorker" class="waf-widget waf-dataGrid default inherited  "></div>
+ 		<div id="image1" data-type="image" data-target="_blank" data-lib="WAF" data-label-position="left" data-label="" data-fit="4" data-constraint-top="true" data-constraint-right="true" data-constraint-left="false" data-constraint-bottom="false" data-binding="coWorker.photo" class="waf-widget waf-image default inherited  "></div>
+ 					<label id="label5" data-type="label" data-lib="WAF" for="textField5" data-valign="middle" data-margin="5" class="waf-widget waf-label default inherited    waf-label-textField " data-constraint-left="true" data-constraint-top="true" data-constraint-right="true" data-constraint-bottom="true">Evaluation</label>
+ 		<button id="button1" data-type="button" data-lib="WAF" class="waf-widget waf-button default inherited  " data-action="save" data-target="_blank" data-constraint-left="true" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false" data-binding="coWorker"></button>
+ 		<div id="richText1" data-type="richText" data-lib="WAF" class="waf-widget waf-richText default inherited  " data-autoWidth="false" data-label-position="left" data-target="_blank" data-overflow="Hidden" data-plainText="true" data-constraint-left="true" data-label="Name:" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false" data-binding="coWorker.fullName">[coWorker.fullName]</div>
+ 		<label id="label6" data-type="label" data-lib="WAF" for="richText1" data-valign="middle" data-margin="5" class="waf-widget waf-label default inherited    waf-label-richText " data-constraint-left="true" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false">Name:</label>
+ 		<div id="richText2" data-type="richText" data-lib="WAF" class="waf-widget waf-richText default inherited  " data-autoWidth="false" data-label-position="left" data-target="_blank" data-overflow="Hidden" data-plainText="true" data-constraint-left="true" data-label="Title:" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false" data-binding="coWorker.title">[coWorker.title]</div>
+ 		<label id="label7" data-type="label" data-lib="WAF" for="richText2" data-valign="middle" data-margin="5" class="waf-widget waf-label default inherited    waf-label-richText " data-constraint-left="true" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false">Title:</label>
+ 		<div id="richText3" data-type="richText" data-lib="WAF" class="waf-widget waf-richText default inherited  " data-autoWidth="false" data-label-position="left" data-target="_blank" data-overflow="Hidden" data-plainText="true" data-constraint-left="true" data-label="Relation:" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false" data-binding="coWorker.relation">[coWorker.relation]</div>
+ 		<label id="label8" data-type="label" data-lib="WAF" for="richText3" data-valign="middle" data-margin="5" class="waf-widget waf-label default inherited    waf-label-richText " data-constraint-left="true" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false">Relation:</label>
+ 			</div>
+	<textarea id="textField5" data-type="textField" data-lib="WAF" data-binding="coWorker.evaluationComments" class="waf-widget waf-textField default inherited  " data-label="Evaluation" data-label-position="top" data-multiline="true" data-password="false" data-datapicker-on="true" data-datapicker-icon-only="false" data-constraint-left="true" data-constraint-top="true" data-constraint-bottom="true" data-constraint-right="true"></textarea>
+		
+		<script type="text/javascript" src="/waLib/WAF/Loader.js"></script>
+	</body>
+</html>

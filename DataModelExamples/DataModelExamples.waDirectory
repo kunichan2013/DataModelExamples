@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><directory>
+
+<group ID="540DB8D1DE10DA428C9D1A976C5555DA" name="Employee">
+
+	<include group="Manager" groupID="1DC67D7E86970F43A07D9CBCB54BBE2E"/>
+</group>
+
+<group ID="1DC67D7E86970F43A07D9CBCB54BBE2E" name="Manager">
+
+	<include group="Admin" groupID="01000000000000000000000000000000"/>
+</group>
+
+<group ID="18A3A9BBC861B64A809B97CE78BD94E2" name="Internal"/>
+
+<group ID="01000000000000000000000000000000" name="Admin">
+
+	<include group="Internal" groupID="18A3A9BBC861B64A809B97CE78BD94E2"/>
+
+	<include user="admin" ID="176FBDC6CCFA9B469E9615CF28767C2D"/>
+</group>
+
+<group ID="02000000000000000000000000000000" name="Debugger">
+
+	<include user="admin" ID="176FBDC6CCFA9B469E9615CF28767C2D"/>
+</group>
+
+<group ID="A046CF4E6950ED4580C86A9EBCBD7F29" name="Student"/>
+
+<group ID="82CA6C6C0E7F47419BEB08BD4A48456A" name="Teacher"/>
+
+<group ID="58141002AA247F44810259E572B194D4" name="Registrar"/>
+
+<group ID="01730CD54998764DBE037CF1C907C7B4" name="Staff"/>
+
+<user ID="176FBDC6CCFA9B469E9615CF28767C2D" name="admin" fullName="Administrator" password="9f2d4282ce33bea7ea2b7b4e03c2fbc5"/>
+</directory>

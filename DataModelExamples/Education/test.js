@@ -1,0 +1,1 @@
+﻿ds.Student.query('ID < 100 order by last desc');

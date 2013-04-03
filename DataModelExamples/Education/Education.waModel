@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><EntityModelCatalog>
+
+<dbInfo name="Education" uuid="DEB2380315EE8E47AF7052ECFC4FADBC"/>
+
+<extraProperties ____objectunic="true">
+
+	<relationCurve ____objectunic="true" run="false" mode="2"/>
+</extraProperties>
+
+<dataClasses name="Attendee" className="Attendee" collectionName="Attendees" scope="public" uuid="E5765A0017B767408BD313778B76B4E3" tablePos="4">
+
+	<extraProperties ____objectunic="true" panelColor="rgb(255, 230, 255)" methVisible="false">
+
+		<panel ____objectunic="true" isOpen="true" pathVisible="true">
+
+			<position ____objectunic="true" X="689" Y="539"/>
+</panel>
+</extraProperties>
+
+	<attributes name="ID" kind="storage" scope="public" uuid="AAB8E75B86889C42B836E122DE574CC3" fieldPos="1" unique="true" autosequence="true" type="long" primKey="true"/>
+
+	<attributes name="theCourse" kind="relatedEntity" scope="public" type="Course" uuid="FF3B7EC3FBFF6D42B55A17D8A54F1A7C" fieldPos="2" path="Course"/>
+
+	<attributes name="gradePoint" kind="storage" scope="public" uuid="0F8C03D874B9F64C902A04B26EFB9FDB" fieldPos="4" type="number"/>
+
+	<attributes name="grade" kind="calculated" scope="public" type="string" scriptKind="javascript">
+
+		<onGet from="guidedModel.Attendee.grade.onGet"/>
+
+		<onSet from="guidedModel.Attendee.grade.onSet"/>
+
+		<onQuery from="guidedModel.Attendee.grade.onQuery"/>
+
+		<onSort from="guidedModel.Attendee.grade.onSort"/>
+
+	</attributes>
+
+	<attributes name="theStudent" kind="relatedEntity" scope="public" type="Student" uuid="181B3E2A2276544EA1D5ED015BB72638" fieldPos="3" path="Student"/>
+
+</dataClasses>
+
+<dataClasses name="Course" className="Course" collectionName="Courses" scope="public" uuid="F4C61924279E3743B7410D3EFDE3E7DF" tablePos="3">
+
+	<extraProperties ____objectunic="true" panelColor="rgb(204, 193, 217)" methVisible="false">
+
+		<panel ____objectunic="true" isOpen="true" pathVisible="true">
+
+			<position ____objectunic="true" X="383" Y="540"/>
+</panel>
+</extraProperties>
+
+	<attributes name="ID" kind="storage" scope="public" uuid="281A7B0BEF31614AA626BCA3B13DA9AC" fieldPos="1" unique="true" autosequence="true" type="long" primKey="true"/>
+
+	<attributes name="schedule" kind="storage" scope="public" uuid="05C84A4A401B6D409B95826EA5B4C1F9" fieldPos="2" type="string"/>
+
+	<attributes name="location" kind="storage" scope="public" uuid="5133E32ED5BB3842B9061FF64C4A44F8" fieldPos="3" type="string"/>
+
+	<attributes name="year" kind="storage" scope="public" uuid="0596150AE7ED74439A6C3A10C4988676" fieldPos="4" type="string"/>
+
+	<attributes name="semester" kind="storage" scope="public" uuid="F7C0573014D8C947A51954E3B601C194" fieldPos="5" type="string"/>
+
+	<attributes name="courseMaster" kind="relatedEntity" scope="public" type="CourseMaster" uuid="415680C008987448A6F6F396ADC4BEC1" fieldPos="6" path="CourseMaster"/>
+
+	<attributes name="attendees" kind="relatedEntities" scope="public" type="Attendees" reversePath="true" path="theCourse"/>
+
+	<attributes name="courseTeacher" kind="relatedEntity" scope="public" type="Teacher" uuid="3B3911996BDF294D942CB4E99DD7A160" fieldPos="7" path="Teacher"/>
+
+	<methods name="copyYear" applyTo="dataClass" scope="public" from="guidedModel.Course.methods.copyYear"/>
+
+</dataClasses>
+
+<dataClasses name="CourseMaster" className="CourseMaster" collectionName="CourseMasters" scope="public" uuid="16D6346201B2B14E8EDBC4802424C970" tablePos="2">
+
+	<extraProperties ____objectunic="true" panelColor="#B2A2C7" methVisible="false">
+
+		<panel ____objectunic="true" isOpen="true" pathVisible="true">
+
+			<position ____objectunic="true" X="97" Y="543"/>
+</panel>
+</extraProperties>
+
+	<attributes name="ID" kind="storage" scope="public" uuid="EF81DA68B52C3C429C0E864D99AEB760" fieldPos="1" unique="true" autosequence="true" type="long" primKey="true"/>
+
+	<attributes name="code" kind="storage" scope="public" uuid="AD55F25388FC0D4EAB211CEBF8498517" fieldPos="2" type="string"/>
+
+	<attributes name="name" kind="storage" scope="public" uuid="EAC484B194A908429D2BAD9F6D27FDB5" fieldPos="3" type="string"/>
+
+	<attributes name="department" kind="storage" scope="public" uuid="650AAA045B0C5A44BBB80606C90199C1" fieldPos="4" type="string"/>
+
+	<attributes name="units" kind="storage" scope="public" uuid="34984BAB849E574B8BE5E794CF4E2B71" fieldPos="5" type="number"/>
+
+	<attributes name="courses" kind="relatedEntities" scope="public" type="Courses" reversePath="true" path="courseMaster"/>
+
+</dataClasses>
+
+<dataClasses name="Person" className="Person" collectionName="People" scope="public" uuid="10003DFC22181A4781610C10956F2E18" tablePos="1">
+
+	<extraProperties ____objectunic="true" panelColor="#D8D8D8" methVisible="false">
+
+		<panel ____objectunic="true" isOpen="true" pathVisible="true">
+
+			<position ____objectunic="true" X="125" Y="28"/>
+</panel>
+</extraProperties>
+
+	<attributes name="ID" kind="storage" scope="public" uuid="2CAF9C35B12E1F4F9278E12B3B78892F" fieldPos="1" unique="true" autosequence="true" type="long" primKey="true"/>
+
+	<attributes name="first" kind="storage" scope="public" uuid="6CF7EAB27733B04A9667D10F8B2318D9" fieldPos="2" type="string" indexKind="auto"/>
+
+	<attributes name="last" kind="storage" scope="public" uuid="9DE294045AAACB4890CAB9E569288ACF" fieldPos="3" type="string" indexKind="auto"/>
+
+	<attributes name="fullName" kind="calculated" scope="public" type="string" scriptKind="javascript">
+
+		<onGet from="guidedModel.Person.fullName.onGet"/>
+
+	</attributes>
+
+	<attributes name="address" kind="storage" scope="public" uuid="E633A3243044804EA07AFBBD11D44848" fieldPos="4" type="string"/>
+
+	<attributes name="city" kind="storage" scope="public" uuid="41D6D7C958261640A740001CECDAB8DC" fieldPos="5" type="string"/>
+
+	<attributes name="state" kind="storage" scope="public" uuid="4A0C6E1AB07D2A4E9F497DF43D493DDE" fieldPos="6" type="string"/>
+
+	<attributes name="zip" kind="storage" scope="public" uuid="28ED4FAB3E2DD644ABAF4C96A297F350" fieldPos="7" type="string"/>
+
+	<attributes name="homePhone" kind="storage" scope="public" uuid="345CC3D94731B643AF7333BD79717413" fieldPos="8" type="string"/>
+
+	<attributes name="cellPhone" kind="storage" scope="public" uuid="FE6F68884C9A9B4A878522B2E93A9CE7" fieldPos="9" type="string"/>
+
+	<attributes name="email" kind="storage" scope="public" uuid="B16DD42649E16D469550C50AE0FE1714" fieldPos="10" type="string"/>
+
+	<attributes name="enrolled" kind="storage" scope="public" uuid="14252F957389B74A8E66E36C37B0C8BF" fieldPos="14" type="bool" indexKind="auto"/>
+
+	<attributes name="isTeacher" kind="storage" scope="public" uuid="E5DA9C58BA0DDB4DBDB6F01C5601F53D" fieldPos="15" type="bool" indexKind="auto"/>
+
+	<attributes name="login" kind="storage" scope="private" uuid="EACDEDB2E8FFD44CB9A938CC79C4D8CA" fieldPos="11" type="string" indexKind="auto"/>
+
+	<attributes name="password" kind="storage" scope="private" uuid="D046D508EAF322478BD110B83F23A898" fieldPos="12" type="string"/>
+
+	<attributes name="accessLevel" kind="storage" scope="private" uuid="C69B135119966248A11477402AE95B9A" fieldPos="13" type="number"/>
+
+	<methods name="getRandomPeople" applyTo="dataClass" scope="publicOnServer" from="guidedModel.Person.methods.getRandomPeople"/>
+
+	<methods name="importData" applyTo="dataClass" scope="publicOnServer" from="guidedModel.Person.methods.importData"/>
+
+	<methods name="makeAttendees" applyTo="dataClass" scope="publicOnServer" from="guidedModel.Person.methods.makeAttendees"/>
+
+</dataClasses>
+
+<dataClasses name="Student" className="Student" collectionName="Students" scope="public" extends="Person">
+
+	<extraProperties ____objectunic="true" panelColor="rgb(215, 227, 188)" methodInhVisible="false" inheritedVisible="true" removedVisible="false" methVisible="false">
+
+		<panel ____objectunic="true" isOpen="true" pathVisible="true">
+
+			<position ____objectunic="true" X="742" Y="31"/>
+</panel>
+</extraProperties>
+
+	<attributes name="isTeacher" kind="removed"/>
+
+	<attributes name="login" kind="removed"/>
+
+	<attributes name="password" kind="removed"/>
+
+	<attributes name="accessLevel" kind="removed"/>
+
+	<attributes name="address" kind="removed"/>
+
+	<attributes name="city" kind="removed"/>
+
+	<attributes name="state" kind="removed"/>
+
+	<attributes name="zip" kind="removed"/>
+
+	<attributes name="homePhone" kind="removed"/>
+
+	<attributes name="cellPhone" kind="removed"/>
+
+	<attributes name="attendance" kind="relatedEntities" scope="public" type="Attendees" reversePath="true" path="theStudent"/>
+
+	<attributes name="GPA" kind="calculated" scope="public" type="number" scriptKind="javascript">
+
+		<onGet from="guidedModel.Student.GPA.onGet"/>
+
+	</attributes>
+
+	<attributes name="registered" kind="calculated" scope="public" type="bool" scriptKind="javascript">
+
+		<onGet from="guidedModel.Student.registered.onGet"/>
+
+	</attributes>
+
+	<events kind="onRestrictingQuery" from="guidedModel.Student.events.onRestrictingQuery"/>
+
+</dataClasses>
+
+<dataClasses name="Teacher" className="Teacher" collectionName="Teachers" scope="public" extends="Person">
+
+	<extraProperties ____objectunic="true" panelColor="#B8CCE4" inheritedVisible="true" methodInhVisible="false" removedVisible="false" methVisible="false">
+
+		<panel ____objectunic="true" isOpen="true" pathVisible="true">
+
+			<position ____objectunic="true" X="373" Y="29"/>
+</panel>
+</extraProperties>
+
+	<attributes name="enrolled" kind="removed"/>
+
+	<attributes name="login" kind="removed"/>
+
+	<attributes name="password" kind="removed"/>
+
+	<attributes name="accessLevel" kind="removed"/>
+
+	<attributes name="address" kind="removed"/>
+
+	<attributes name="city" kind="removed"/>
+
+	<attributes name="state" kind="removed"/>
+
+	<attributes name="zip" kind="removed"/>
+
+	<attributes name="homePhone" kind="removed"/>
+
+	<attributes name="cellPhone" kind="removed"/>
+
+	<attributes name="coursesTaught" kind="relatedEntities" scope="public" type="Courses" reversePath="true" path="courseTeacher"/>
+
+	<attributes name="hasTaught" kind="calculated" scope="public" type="bool" scriptKind="javascript">
+
+		<onGet from="guidedModel.Teacher.hasTaught.onGet"/>
+
+	</attributes>
+
+	<events kind="onRestrictingQuery" from="guidedModel.Teacher.events.onRestrictingQuery"/>
+
+</dataClasses>
+</EntityModelCatalog>

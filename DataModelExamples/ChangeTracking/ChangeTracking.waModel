@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><EntityModelCatalog>
+
+<dbInfo name="ChangeTracking" uuid="DEB2380315EE8E47AF7052ECFC4FADBC"/>
+
+<extraProperties ____objectunic="true">
+
+	<relationCurve ____objectunic="true" run="false" mode="2"/>
+</extraProperties>
+
+<dataClasses name="Change" className="Change" collectionName="Changes" scope="public" uuid="781B2A0287FD0B4C9C420AEF9A294D5B" tablePos="3">
+
+	<extraProperties ____objectunic="true" panelColor="rgb(215, 227, 188)">
+
+		<panel ____objectunic="true" isOpen="true" pathVisible="true">
+
+			<position ____objectunic="true" X="615" Y="83"/>
+</panel>
+</extraProperties>
+
+	<attributes name="ID" kind="storage" scope="public" uuid="D24FB3396965064082A07A0F29D26E6E" fieldPos="1" unique="true" autosequence="true" type="long" primKey="true"/>
+
+	<attributes name="className" kind="storage" scope="public" uuid="EF10043F86070249BF32A34885B1D18C" fieldPos="2" type="string"/>
+
+	<attributes name="entityKey" kind="storage" scope="public" uuid="39613E8232006542B2A7EE14984D55C6" fieldPos="3" type="uuid" indexKind="auto"/>
+
+	<attributes name="changes" kind="storage" scope="public" uuid="6A3D1EEF3EEBED499556E2B7F306DC88" fieldPos="4" type="string"/>
+
+	<attributes name="modified" kind="storage" scope="public" uuid="7D2F0E54CDCE5C47B2AFAB0B09ECE38A" fieldPos="5" type="date" indexKind="auto"/>
+
+	<attributes name="modifiedBy" kind="relatedEntity" scope="public" type="Person" uuid="0AB3C1D24A235F42832154C1CA4BCC63" fieldPos="6" path="Person"/>
+
+	<methods name="changedCollection" applyTo="entityCollection" scope="public" from="guidedModel.Change.collectionMethods.changedCollection"/>
+
+	<methods name="changedEntity" applyTo="entity" scope="public" from="guidedModel.Change.entityMethods.changedEntity"/>
+
+	<methods name="getChanges" applyTo="dataClass" scope="publicOnServer" from="guidedModel.Change.methods.getChanges"/>
+
+	<methods name="writeChange" applyTo="dataClass" scope="publicOnServer" from="guidedModel.Change.methods.writeChange"/>
+
+</dataClasses>
+
+<dataClasses name="Person" className="Person" collectionName="People" scope="public" uuid="BD8D1D5A7BEE914A912B55BEFF78CF24" tablePos="1">
+
+	<extraProperties ____objectunic="true" panelColor="#D8D8D8">
+
+		<panel ____objectunic="true" isOpen="true" pathVisible="true">
+
+			<position ____objectunic="true" X="117" Y="77"/>
+</panel>
+</extraProperties>
+
+	<attributes name="ID" kind="storage" scope="public" uuid="CC212D676EBBE042A26CBFA85236EEC2" fieldPos="1" unique="true" autosequence="true" type="uuid" primKey="true" autogenerate="true"/>
+
+	<attributes name="first" kind="storage" scope="public" uuid="E8688B786F6F1041AE251B850F283888" fieldPos="2" type="string"/>
+
+	<attributes name="last" kind="storage" scope="public" uuid="DFC1C19CECA7C14CBF5F6E5360F3C8B3" fieldPos="3" type="string"/>
+
+	<attributes name="middle" kind="storage" scope="public" uuid="518CC5404F6E894F8D83BB08AB77FA84" fieldPos="4" type="string"/>
+
+	<attributes name="address" kind="storage" scope="public" uuid="1B6F172F7769B14FB022081A344CFFC2" fieldPos="5" type="string"/>
+
+	<attributes name="city" kind="storage" scope="public" uuid="127A0F86D74081448FC34F161EE0071A" fieldPos="6" type="string"/>
+
+	<attributes name="state" kind="storage" scope="public" uuid="A52008A56089F447B3F8A969D981D44A" fieldPos="7" type="string"/>
+
+	<attributes name="zip" kind="storage" scope="public" uuid="5A38F0BA1F603047BACCB11F387D0268" fieldPos="8" type="string"/>
+
+	<attributes name="email" kind="storage" scope="public" uuid="5B45C40516F7644D8684A072FB983407" fieldPos="9" type="string"/>
+
+	<attributes name="homePhone" kind="storage" scope="public" uuid="4635E0AC9ADC484694BF5953EF392C84" fieldPos="10" type="string"/>
+
+	<attributes name="mobilePhone" kind="storage" scope="public" uuid="EA7723C4B1CCE8409E6A519CBF4D3593" fieldPos="11" type="string"/>
+
+	<attributes name="birthDate" kind="storage" scope="public" uuid="D47D2BDA259910469937269F5DFB9D23" fieldPos="12" type="date"/>
+
+	<attributes name="changesByMe" kind="relatedEntities" scope="public" type="Changes" reversePath="true" path="modifiedBy"/>
+
+	<events kind="onSave" from="guidedModel.Person.events.onSave"/>
+
+	<methods name="getChanges" applyTo="entity" scope="publicOnServer" from="guidedModel.Person.entityMethods.getChanges"/>
+
+</dataClasses>
+
+<dataClasses name="Project" className="Project" collectionName="Projects" scope="public" uuid="603EE4FF46DC4A4F8E30E35B31293F9F" tablePos="2">
+
+	<extraProperties ____objectunic="true" panelColor="#D88CFF">
+
+		<panel ____objectunic="true" isOpen="true" pathVisible="true">
+
+			<position ____objectunic="true" X="385" Y="82"/>
+</panel>
+</extraProperties>
+
+	<attributes name="ID" kind="storage" scope="public" uuid="67519E6CD09C6947A8FDC4659CBA56BF" fieldPos="1" unique="true" autosequence="true" type="uuid" primKey="true" autogenerate="true"/>
+
+	<attributes name="name" kind="storage" scope="public" uuid="D95C17F86957FF428D20FF01C2D92FF6" fieldPos="2" type="string"/>
+
+	<attributes name="startDate" kind="storage" scope="public" uuid="1609E2F1E733974CBEBDD55341AB2E08" fieldPos="3" type="date"/>
+
+	<attributes name="estimate" kind="storage" scope="public" uuid="5022B3D174B8B243925D5799E8F286B4" fieldPos="4" type="number"/>
+
+	<attributes name="department" kind="storage" scope="public" uuid="CB181D78043A0D4CBFEB60542F52CE59" fieldPos="5" type="string"/>
+
+	<attributes name="mainContact" kind="relatedEntity" scope="public" type="Person" uuid="CCE718D2A6EB9F4E8E324D48B5CD7DE6" fieldPos="6" path="Person"/>
+
+	<events kind="onSave" from="guidedModel.Project.events.onSave"/>
+
+	<methods name="getChanges" applyTo="entity" scope="publicOnServer" from="guidedModel.Project.entityMethods.getChanges"/>
+
+</dataClasses>
+</EntityModelCatalog>

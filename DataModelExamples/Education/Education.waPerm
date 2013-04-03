@@ -1,0 +1,3 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><permissions>
+<allow action="execute" groupID="58141002AA247F44810259E572B194D4" resource="Education.Course.copyYear" temporaryForcePermissions="false" type="method"/>
+</permissions>
